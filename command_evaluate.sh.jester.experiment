@@ -1,0 +1,36 @@
+#!/bin/sh
+
+command_file=`basename "$0"`
+script_file=evaluate.py
+gpu=0,1,2,3
+data=/datasets/jester/gulp_128
+model=c2d_resnet34_cp_112
+model_path=log_c2d_resnet34_cp_112_12_2_train/model-0.ckpt
+num_threads=6
+num_frames=12
+frame_step=2
+width=112
+height=112
+num_classes=27
+fcn=6
+full_size=112
+dump_dir=log_c2d_resnet34_cp_112_12_2_train_evaluate_fcn6
+log_file=$dump_dir.txt
+
+
+python3 $script_file \
+    --gpu $gpu \
+    --data $data \
+    --model $model \
+    --model_path $model_path \
+    --num_threads $num_threads \
+    --num_frames $num_frames \
+    --frame_step $frame_step \
+    --width $width \
+    --height $height \
+    --num_classes $num_classes \
+    --dump_dir $dump_dir \
+    --fcn $fcn \
+    --full_size $full_size \
+    --command_file $command_file \
+    > $log_file 2>&1 &

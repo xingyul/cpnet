@@ -1,0 +1,44 @@
+#!/bin/sh
+
+command_file=`basename "$0"`
+script_file=train_multi_gpu.py
+gpu=0,1,2,3
+data=/datasets/jester/gulp_128
+model=c2d_resnet34_cp_112
+model_path=pretrained_models/ImageNet-ResNet34.npz
+batch_size=32
+learning_rate=0.01
+num_threads=6
+num_frames=12
+frame_step=2
+width=112
+height=112
+num_classes=27
+decay_step=40
+symmetric_flip_labels=11:12,16:17
+log_dir=log_${model}_12_2_train
+log_file=$log_dir.txt
+
+##### pay attention to augmentation in train_multi_gpu.py: spatial_transforms.RandomHorizontalFlip and spatial_transforms.Resize
+
+# export PYTHONPATH=$PYTHONPATH:$(pwd)/gulpio/gulpio
+# export PYTHONPATH=$PYTHONPATH:$(pwd)/gulpio
+
+python3 $script_file \
+    --decay_step $decay_step \
+    --gpu $gpu \
+    --data $data \
+    --model $model \
+    --model_path $model_path \
+    --log_dir $log_dir \
+    --batch_size $batch_size \
+    --learning_rate $learning_rate \
+    --num_threads $num_threads \
+    --num_frames $num_frames \
+    --frame_step $frame_step \
+    --width $width \
+    --height $height \
+    --num_classes $num_classes \
+    --symmetric_flip_labels $symmetric_flip_labels \
+    --command_file $command_file \
+    > $log_file 2>&1 &
