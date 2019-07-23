@@ -9,7 +9,6 @@ Convert `.jpg` files to `.mp4` files.
 python jpg_to_mp4.py \
     --jpg_dir /raid/datasets/jester/20bn-jester-v1 \
     --mp4_dir /datasets/jester/mp4
-
 ```
 
 Download csv files from https://20bn.com/datasets/jester/.
@@ -29,12 +28,11 @@ Then generate `.json` files.
 python gen_json.py --mp4_dir /datasets/jester/mp4_cat \
     --csv_dir .
     --json_dir /datasets/jester 
-
 ```
 
 Generate gulp files
 ```
-sh gen_gulp.sh /home/xyl/Projects/video-recognition/utils
+sh gen_gulp.sh /abs/path/to/cpnet/utils
 ```
 
 

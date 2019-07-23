@@ -2,9 +2,8 @@
 set -x #echo on
 
 export PYTHONPATH=$PYTHONPATH:$1
-# export PYTHONPATH=$PYTHONPATH:/home/xyl/Projects/video-recognition-to-push/utils
 
-python -m gulpio.GulpAdapter \
+python3 -m gulpio.GulpAdapter \
     --json_file /datasets/jester/val_labels.json \
     --input_path /datasets/jester/mp4_cat/val \
     --output_path /datasets/jester/gulp_128/val \

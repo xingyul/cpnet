@@ -10,7 +10,7 @@ import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument('--mp4_src_dir', default='/datasets/jester/mp4', type=str, help='mp4 input root dir')
 parser.add_argument('--mp4_cat_dir', default='/datasets/jester/mp4_cat', type=str, help='categorized mp4 output dir')
-parser.add_argument('--csv_dir', default='/raid/datasets/jester/', type=str, help='csv dir')
+parser.add_argument('--csv_dir', default='.', type=str, help='csv dir')
 FLAGS = parser.parse_args()
 
 mp4_src_dir = FLAGS.mp4_src_dir
