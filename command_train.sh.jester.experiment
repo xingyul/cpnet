@@ -1,7 +1,7 @@
 #!/bin/sh
 
 command_file=`basename "$0"`
-script_file=train_multi_gpu.py
+script_file=train.py
 gpu=0,1,2,3
 data=/datasets/jester/gulp_128
 model=c2d_resnet34_cp_112
