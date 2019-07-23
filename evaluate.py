@@ -119,7 +119,7 @@ elif FCN == 3:
 elif FCN == 5:
     loader_bsize = 10
 elif FCN == 6:
-    loader_bsize = 8
+    loader_bsize = 16
     WIDTH = FULL_SIZE
     HEIGHT = FULL_SIZE
 elif FCN == 8:
