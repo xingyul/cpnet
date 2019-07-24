@@ -50,7 +50,7 @@ To test the model, rename `command_test.sh.jester.experiment` to be `command_tes
 sh command_test.sh
 ```
 
-For Something-Something dataset, the train, evaluation and test command files are `command_train.sh.something.something.experiment`, `command_train.sh.something.something.experiment` and `command_test.sh.something.something.experiment`.
+For Something-Something dataset, the train, evaluation and test command files are `command_train.sh.something.something.experiment`, `command_evaluate.sh.something.something.experiment` and `command_test.sh.something.something.experiment`.
 
 ### License
 Our code is released under CC BY-NC-SA-4.0 License (see LICENSE file for details).
