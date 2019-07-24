@@ -24,69 +24,15 @@ Install <a href="https://www.tensorflow.org/install/">TensorFlow</a>. The code i
 #### Compile Customized TF Operators
 The TF operators are included under `tf_ops`, you need to compile them first by `make` under each ops subfolder (check `Makefile`). Update `arch` in the Makefiles for different <a href="https://en.wikipedia.org/wiki/CUDA#GPUs_supported">CUDA Compute Capability</a> that suits your GPU if necessary.
 
-### Usage
+### Data Preprocessing
 
-#### Jester Experiments
+The data preprocessing scripts are included in `utils/data_preparation`. Please follow the instructions in the `README.md` of each subdirectory.
 
-The data preprocessing scripts are included in `utils/data_preparation`. To process the raw data, first download <a href="https://20bn.com/datasets/jester">Jester dataset</a>. Then extract the files in, for example `/raid/datasets/jester/20bn-jester-v1`, such that the directory looks like
-
-```
-/raid/datasets/jester/
-  20bn-jester-v1
-    1/
-    2/
-    ...
-    148092/
-  jester-v1-test.csv
-  jester-v1-train.csv
-  jester-v1-validation.csv
-```
-
-Then `cd` into directory `utils/data_preparation/jester`. Suppose the default directory containing the output processed files is `/datasets/jester/gulp_128`, then execute commands following the `README.md` in that directory to generate gulped files of video data. For other output directories other than the default one, directories in `utils/data_preparation/jester/gen_gulp.sh` will also need to be changed. The output processed data directory should look like
-
-```
-/datasets/jester/gulp_128/
-  train/
-    Doing other things/
-      100018.gmeta
-      100018.gulp
-      ...
-    Drumming Fingers/
-      100022.gmeta
-      100022.gulp
-      ...
-    ...
-    label2idx.json
-    gulp_log.csv
-    opts.json
-  val/
-    Doing other things/
-      100090.gmeta
-      100090.gulp
-      ...
-    Drumming Fingers/
-      100001.gmeta
-      100001.gulp
-      ...
-    ...
-    label2idx.json
-    gulp_log.csv
-    opts.json
-  test/
-    0/
-      100005.gmeta
-      100005.gulp
-      ...
-    label2idx.json
-    gulp_log.csv
-    opts.json
-```
-
-#### Training and Evaluation
+### Training and Evaluation
 
 First download the ImageNet pretrained ResNet model from <a href="http://models.tensorpack.com/ResNet/">here</a> and put it in `pretrained_models/ImageNet-ResNet34.npz`.
 
-To train the model, rename `command_train.sh.jester.experiment` to be `command_train.sh` and simply execute the shell script `command_train.sh`. Batch size, learning rate etc are adjustable.
+To train the model for Jester dataset, rename `command_train.sh.jester.experiment` to be `command_train.sh` and simply execute the shell script `command_train.sh`. Batch size, learning rate etc are adjustable.
 
 ```
 sh command_train.sh
@@ -104,9 +50,7 @@ To test the model, rename `command_test.sh.jester.experiment` to be `command_tes
 sh command_test.sh
 ```
 
-#### Something-Something Experiment
-
-Similar to Jester experiment. To be released. Stay Tuned.
+For Something-Something dataset, the train, evluation and test command files are `command_train.sh.jester.experiment`, `command_train.sh.jester.experiment` and `command_test.sh.jester.experiment`.
 
 ### License
 Our code is released under CC BY-NC-SA-4.0 License (see LICENSE file for details).
