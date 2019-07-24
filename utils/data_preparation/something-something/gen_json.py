@@ -58,7 +58,7 @@ with open(test_json_file, 'r') as jsonfile:
         try:
             clip = VideoFileClip(os.path.join(mp4_dir, d['id'] + '.mp4'))
             duration = clip.duration
-            all_jsons[d['id']] = {'annotations': {'label': 0, 'segment': [0, duration]}, 'duration': duration, 'subset': 'test'}
+            all_jsons[d['id']] = {'annotations': {'label': '0', 'segment': [0, duration]}, 'duration': duration, 'subset': 'test'}
         except:
             print('bad:', d['id'])
 
