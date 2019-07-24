@@ -1,5 +1,5 @@
 ### Learning Video Representations from Correspondence Proposals
-Created by <a href="http://xingyul.github.io">Xingyu Liu</a>, <a href="https://joonyoung-cv.github.io" target="_blank">Joon-Young Lee</a> and <a href="https://sites.google.com/view/hailinjin" target="_blank">Hailin Jin</a> from Stanford University and Adobe Research.
+Created by <a href="http://xingyul.github.io">Xingyu Liu</a>, <a href="https://joonyoung-cv.github.io" target="_blank">Joon-Young Lee</a> and <a href="https://sites.google.com/view/hailinjin" target="_blank">Hailin Jin</a> from Stanford University and Adobe Research. <a href="https://arxiv.org/abs/1905.07853">Paper link</a>.
 
 <img src="https://github.com/xingyul/cpnet/blob/master/doc/teaser.png" width="80%">
 
