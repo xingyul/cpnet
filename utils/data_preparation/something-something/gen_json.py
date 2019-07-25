@@ -38,7 +38,7 @@ for json_filename, div in [[train_json_file, 'train'], [val_json_file, 'val']]:
     with open(json_filename, 'r') as jsonfile:
         data = json.load(jsonfile)
         all_jsons = {}
-        for d in data[:100]:
+        for d in data:
             print(d['id'])
             try:
                 clip = VideoFileClip(os.path.join(mp4_dir, d['id'] + '.mp4'))
@@ -53,7 +53,7 @@ for json_filename, div in [[train_json_file, 'train'], [val_json_file, 'val']]:
 with open(test_json_file, 'r') as jsonfile:
     data = json.load(jsonfile)
     all_jsons = {}
-    for d in data[:100]:
+    for d in data:
         print(d['id'])
         try:
             clip = VideoFileClip(os.path.join(mp4_dir, d['id'] + '.mp4'))
