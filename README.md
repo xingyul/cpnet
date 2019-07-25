@@ -49,6 +49,7 @@ To test the model, rename `command_test.sh.jester.experiment` to be `command_tes
 ```
 sh command_test.sh
 ```
+A pre-trained model on Jester dataset is provided <a href="https://drive.google.com/drive/folders/1M962XT7f11-mdPSRdQdWzhGElL-2WUbS?usp=sharing">here</a> for download.
 
 For Something-Something dataset, the train, evaluation and test command files are `command_train.sh.something.something.experiment`, `command_evaluate.sh.something.something.experiment` and `command_test.sh.something.something.experiment`.
 
