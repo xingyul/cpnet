@@ -7,8 +7,8 @@ import json
 import json
 import argparse
 import multiprocessing
+import subprocess
 
-from moviepy.editor import VideoFileClip
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--mp4_dir', default='/datasets/something-something/mp4', type=str, help='mp4 root dir')
@@ -35,35 +35,38 @@ def transform_str(string_):
     return string
 
 for json_filename, div in [[train_json_file, 'train'], [val_json_file, 'val']]:
+    if not os.path.exists(div):
+        os.system('mkdir -p {}'.format(div))
+
     with open(json_filename, 'r') as jsonfile:
         data = json.load(jsonfile)
         all_jsons = {}
-        for d in data:
-            print(d['id'])
-            try:
-                clip = VideoFileClip(os.path.join(mp4_dir, d['id'] + '.mp4'))
-                duration = clip.duration
-                all_jsons[d['id']] = {'annotations': {'label': transform_str(d['template']), 'segment': [0, duration]}, 'duration': duration, 'subset': div}
-            except:
-                print('bad:', d['id'])
+        for i, d in enumerate(data):
+            print(i, d['id'])
+
+            duration = subprocess.check_output(['ffprobe', '-i', os.path.join(mp4_dir, d['id'] + '.mp4'), '-show_entries', 'format=duration', '-v', 'quiet', '-of', 'csv=%s' % ("p=0")])
+            duration = float(duration)
+            all_jsons[d['id']] = {'annotations': {'label': transform_str(d['template']), 'segment': [0, duration]}, 'duration': duration, 'subset': div}
 
         with open(os.path.join(output_json_dir, div + '_labels.json'), 'w') as outfile:
             outfile.write(json.dumps(all_jsons, sort_keys=True, indent=4))
 
+if not os.path.exists('test'):
+    os.system('mkdir -p {}'.format('test'))
+
 with open(test_json_file, 'r') as jsonfile:
     data = json.load(jsonfile)
     all_jsons = {}
-    for d in data:
-        print(d['id'])
-        try:
-            clip = VideoFileClip(os.path.join(mp4_dir, d['id'] + '.mp4'))
-            duration = clip.duration
-            all_jsons[d['id']] = {'annotations': {'label': '0', 'segment': [0, duration]}, 'duration': duration, 'subset': 'test'}
-        except:
-            print('bad:', d['id'])
+    for i, d in enumerate(data):
+        print(i, d['id'])
 
-    with open(os.path.join(output_json_dir, 'test_labels.json'), 'w') as outfile:
+        duration = subprocess.check_output(['ffprobe', '-i', os.path.join(mp4_dir, d['id'] + '.mp4'), '-show_entries', 'format=duration', '-v', 'quiet', '-of', 'csv=%s' % ("p=0")])
+        duration = float(duration)
+        all_jsons[d['id']] = {'annotations': {'label': '0', 'segment': [0, duration]}, 'duration': duration, 'subset': 'test'}
+
+    with open(os.path.join(output_json_dir, 'test' + '_labels.json'), 'w') as outfile:
         outfile.write(json.dumps(all_jsons, sort_keys=True, indent=4))
+
 
 
 
