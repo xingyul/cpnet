@@ -49,9 +49,11 @@ To test the model, rename `command_test.sh.jester.experiment` to be `command_tes
 ```
 sh command_test.sh
 ```
-A pre-trained model on Jester dataset is provided <a href="https://drive.google.com/drive/folders/1M962XT7f11-mdPSRdQdWzhGElL-2WUbS?usp=sharing">here</a> for download.
+A pre-trained model with ResNet-34 as backbone on Jester dataset is provided <a href="https://drive.google.com/drive/folders/1M962XT7f11-mdPSRdQdWzhGElL-2WUbS?usp=sharing">here</a> for download.
 
 For Something-Something dataset, the train, evaluation and test command files are `command_train.sh.something.something.experiment`, `command_evaluate.sh.something.something.experiment` and `command_test.sh.something.something.experiment`.
+
+A pre-trained model with ResNet-34 as backbone on Something-Something dataset is provided <a href="https://drive.google.com/drive/folders/1Bz9c3xIJrCjc9hwJ5d3HcbU2TB2kaWAe?usp=sharing">here</a> for download.
 
 ### License
 Our code is released under CC BY-NC-SA-4.0 License (see LICENSE file for details).
