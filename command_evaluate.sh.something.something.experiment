@@ -5,16 +5,16 @@ script_file=evaluate.py
 gpu=0,1,2,3
 data=/datasets/something-something/gulp_240
 model=c2d_resnet34_cp_224
-model_path=log_c2d_resnet34_cp_224_12_2_train/model-100.ckpt
-num_threads=6
-num_frames=12
+model_path=log_something_something_c2d_resnet34_cp_224_24_2_train/model-3.ckpt
+num_threads=1
+num_frames=24
 frame_step=2
 width=224
 height=224
 num_classes=174
 fcn=6
 full_size=224
-dump_dir=log_c2d_resnet34_cp_224_12_2_train_evaluate_fcn6
+dump_dir=log_something_something_c2d_resnet34_cp_224_24_2_train_evaluate_fcn6
 log_file=$dump_dir.txt
 
 

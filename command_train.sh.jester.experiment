@@ -16,7 +16,7 @@ height=112
 num_classes=27
 decay_step=40
 symmetric_flip_labels=11:12,16:17
-log_dir=log_${model}_${num_frames}_${frame_step}_train
+log_dir=log_jester_${model}_${num_frames}_${frame_step}_train
 log_file=$log_dir.txt
 
 ##### pay attention to augmentation in train.py: spatial_transforms.RandomHorizontalFlip and spatial_transforms.Resize

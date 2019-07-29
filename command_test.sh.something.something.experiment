@@ -5,7 +5,7 @@ script_file=test.py
 gpu=0,1,2,3
 data=/datasets/something-something/gulp_240
 model=c2d_resnet34_cp_224
-model_path=log_c2d_resnet34_cp_224_12_2_train/model-100.ckpt
+model_path=log_something_something_c2d_resnet34_cp_224_12_2_train/model-100.ckpt
 num_threads=6
 num_frames=12
 frame_step=2
@@ -14,7 +14,7 @@ height=224
 num_classes=174
 full_size=224
 fcn=6
-dump_dir=log_c2d_resnet34_cp_112_12_2_train_test_6
+dump_dir=log_something_something_c2d_resnet34_cp_112_12_2_train_test_6
 log_file=$dump_dir.txt
 
 

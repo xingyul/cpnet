@@ -5,7 +5,7 @@ script_file=test.py
 gpu=0,1,2,3
 data=/datasets/jester/gulp_128
 model=c2d_resnet34_cp_112
-model_path=log_c2d_resnet34_cp_112_12_2_train/model-0.ckpt
+model_path=log_jester_c2d_resnet34_cp_112_12_2_train/model-0.ckpt
 num_threads=6
 num_frames=12
 frame_step=2
@@ -14,7 +14,7 @@ height=112
 num_classes=27
 full_size=112
 fcn=6
-dump_dir=log_c2d_resnet34_cp_112_12_2_train_test_6
+dump_dir=log_jester_c2d_resnet34_cp_112_12_2_train_test_6
 log_file=$dump_dir.txt
 
 
