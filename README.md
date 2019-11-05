@@ -60,6 +60,8 @@ Our code is released under CC BY-NC-SA-4.0 License (see LICENSE file for details
 
 ### Related Projects
 
+* <a href="https://sites.google.com/corp/view/meteornet" target="_blank">MeteorNet: Deep Learning on Dynamic 3D Point Cloud Sequences
+</a> by Liu et al. (ICCV 2019 Oral Presentation). Code and data released in <a href="https://github.com/xingyul/meteornet">GitHub</a>.
 * <a href="https://arxiv.org/abs/1806.01411" target="_blank">FlowNet3D: Learning Scene Flow in 3D Point Clouds
 </a> by Liu et al. (CVPR 2019). Code and data released in <a href="https://github.com/xingyul/flownet3d">GitHub</a>.
 * <a href="http://stanford.edu/~rqi/pointnet" target="_blank">PointNet: Deep Learning on Point Sets for 3D Classification and Segmentation</a> by Qi et al. (CVPR 2017 Oral Presentation). Code and data released in <a href="https://github.com/charlesq34/pointnet">GitHub</a>.
